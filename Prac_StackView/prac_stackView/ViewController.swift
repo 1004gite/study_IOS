@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         resultLabel.layer.masksToBounds = true
         // 위의 코드와 비슷한 기능
 //        resultLabel.clipsToBounds = true
+        setbtevent()
     }
     
     
@@ -55,8 +56,32 @@ class ViewController: UIViewController {
         bt9.layer.cornerRadius = bt9.bounds.width / 2
         bt0.layer.cornerRadius = bt0.bounds.width / 2
         btE.layer.cornerRadius = btE.bounds.height / 2
+        print("done")
     }
     
+    func setbtevent(){
+        bt1.addTarget(self, action: #selector(clickbt(_:)), for: .touchUpInside)
+        bt2.addTarget(self, action: #selector(clickbt(_:)), for: .touchUpInside)
+        bt3.addTarget(self, action: #selector(clickbt(_:)), for: .touchUpInside)
+        bt4.addTarget(self, action: #selector(clickbt(_:)), for: .touchUpInside)
+        bt5.addTarget(self, action: #selector(clickbt(_:)), for: .touchUpInside)
+        bt6.addTarget(self, action: #selector(clickbt(_:)), for: .touchUpInside)
+        bt7.addTarget(self, action: #selector(clickbt(_:)), for: .touchUpInside)
+        bt8.addTarget(self, action: #selector(clickbt(_:)), for: .touchUpInside)
+        bt9.addTarget(self, action: #selector(clickbt(_:)), for: .touchUpInside)
+        bt0.addTarget(self, action: #selector(clickbt(_:)), for: .touchUpInside)
+        btE.addTarget(self, action: #selector(clickbt(_:)), for: .touchUpInside)
+    }
+    
+    @objc func clickbt(_ sender : UIButton){
+        let tmp : String = sender.titleLabel!.text!
+        if tmp == "clear"{
+            resultLabel.text = ""
+        }
+        else{
+            resultLabel.text! += tmp
+        }
+    }
 
 }
 
