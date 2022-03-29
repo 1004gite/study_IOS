@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
     
@@ -23,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var bt0: UIButton!
     @IBOutlet weak var btE: UIButton!
     
+    var bag = DisposeBag()
     
     
     // 화면을 불러오기 직전에 호출된다.
@@ -81,6 +84,12 @@ class ViewController: UIViewController {
         else{
             resultLabel.text! += tmp
         }
+    }
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        bag = DisposeBag()
     }
 
 }
