@@ -11,3 +11,13 @@
 > String, Date등 데이터타입 포함  
 > 에셋, 번들, 파일접근 등 리소스를 이용하는 기능 포함  
 > 네트워크 기능 포함  
+
+## lazy  
+
+## protocol  
+
+## @discardable  
+
+## core data  
+
+## 
